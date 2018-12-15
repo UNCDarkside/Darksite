@@ -1,0 +1,3 @@
+# Built/distributed files
+dist/
+node_modules/

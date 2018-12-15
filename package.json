@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/TeddyRandby/Darksite.git"
+    "url": "https://github.com/UNCDarkside/Darksite.git"
   },
   "keywords": [
     "Darkside"
@@ -18,9 +18,9 @@
   "author": "Darkside",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/TeddyRandby/Darksite/issues"
+    "url": "https://github.com/UNCDarkside/Darksite/issues"
   },
-  "homepage": "https://github.com/TeddyRandby/Darksite",
+  "homepage": "https://github.com/UNCDarkside/Darksite",
   "husky": {
     "hooks": {
       "pre-commit": "pretty-quick --staged"

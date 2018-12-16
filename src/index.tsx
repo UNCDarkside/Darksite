@@ -1,11 +1,6 @@
-import * as React from 'react';
-import * as ReactDOM from 'react-dom';
+import * as React from "react";
+import * as ReactDOM from "react-dom";
 
-const Hello: React.SFC = () => (
-  <h1>Hello, World!</h1>
-);
+import App from "./App";
 
-ReactDOM.render(
-  <Hello />,
-  document.getElementById('app'),
-);
+ReactDOM.render(<App />, document.getElementById("app"));

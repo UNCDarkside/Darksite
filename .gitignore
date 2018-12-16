@@ -1,3 +1,6 @@
 # Built/distributed files
 dist/
 node_modules/
+
+# Our typescript configuration generates definition files for our css modules
+*.css.d.ts

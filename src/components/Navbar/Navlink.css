@@ -1,0 +1,17 @@
+.navlink,
+.navlink:visited {
+  color: white;
+  display: block;
+  text-decoration: none;
+  display: block;
+  padding: 0.5em 1em;
+  transition: all 0.25s;
+}
+
+.navlink:hover {
+  background: #333;
+}
+
+.navlinkActive {
+  background: #222;
+}

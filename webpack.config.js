@@ -8,7 +8,10 @@ var DIST_DIR = path.resolve(__dirname, "dist");
 var SOURCE_DIR = path.resolve(__dirname, "src");
 
 // Set up Plugins
+
 var plugins = [];
+
+// HTML template for rendering the app
 plugins.push(
   new HtmlWebpackPlugin({
     appMountId: "app",
@@ -27,6 +30,7 @@ module.exports = {
 
   devServer: {
     contentBase: DIST_DIR,
+    historyApiFallback: true,
     port: 8000
   },
 
@@ -34,8 +38,7 @@ module.exports = {
   devtool: "source-map",
 
   resolve: {
-    // Add '.ts' and '.tsx' as resolvable extensions.
-    extensions: [".ts", ".tsx", ".js", ".json"]
+    extensions: ["*", ".ts", ".tsx", ".js", ".json"]
   },
 
   module: {
@@ -44,7 +47,23 @@ module.exports = {
       { test: /\.tsx?$/, loader: "awesome-typescript-loader" },
 
       // All output '.js' files will have any sourcemaps re-processed by 'source-map-loader'.
-      { enforce: "pre", test: /\.js$/, loader: "source-map-loader" }
+      { enforce: "pre", test: /\.js$/, loader: "source-map-loader" },
+
+      {
+        test: /\.css$/,
+        include: SOURCE_DIR,
+        use: [
+          "style-loader",
+          {
+            loader: "typings-for-css-modules-loader",
+            options: {
+              localIdentName: "[name]__[local]___[hash:base64:5]",
+              modules: true,
+              namedExport: true
+            }
+          }
+        ]
+      }
     ]
   },
 

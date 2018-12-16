@@ -2,6 +2,9 @@
 
 Website for UNC Darkside.
 
+**Deployed Site**  
+https://uncdarkside.netlify.com
+
 ## Development
 
 Before running the server, ensure you have NPM installed.

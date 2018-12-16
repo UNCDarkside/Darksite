@@ -2,6 +2,7 @@
 var path = require("path");
 
 // Plugins
+var CopyWebpackPlugin = require("copy-webpack-plugin");
 var HtmlWebpackPlugin = require("html-webpack-plugin");
 
 var DIST_DIR = path.resolve(__dirname, "dist");
@@ -10,6 +11,14 @@ var SOURCE_DIR = path.resolve(__dirname, "src");
 // Set up Plugins
 
 var plugins = [];
+
+// Copy over files to publish directory
+plugins.push(
+  new CopyWebpackPlugin([
+    // Netlify redirects
+    path.resolve(SOURCE_DIR, "_redirects")
+  ])
+);
 
 // HTML template for rendering the app
 plugins.push(

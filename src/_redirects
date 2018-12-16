@@ -1,0 +1,5 @@
+# Redirects for Netlify
+
+# Use index page as fallback because we modify the history through JS, so the
+# referenced files are not actually available.
+/*    /index.html   200

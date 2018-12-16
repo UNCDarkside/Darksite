@@ -25,6 +25,7 @@ plugins.push(
   new HtmlWebpackPlugin({
     appMountId: "app",
     inject: false,
+    links: ["https://fonts.googleapis.com/css?family=Open+Sans|Roboto"],
     template: require("html-webpack-template")
   })
 );

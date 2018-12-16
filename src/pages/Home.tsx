@@ -1,5 +1,11 @@
 import * as React from "react";
 
-const Home = () => <h1>UNC Darkside</h1>;
+import Container from "../components/Container";
+
+const Home = () => (
+  <Container>
+    <h1>UNC Darkside</h1>
+  </Container>
+);
 
 export default Home;

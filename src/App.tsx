@@ -1,7 +1,8 @@
 import * as React from "react";
-import { BrowserRouter, Link, Route } from "react-router-dom";
+import { BrowserRouter, Link, Route, Switch } from "react-router-dom";
 
 import Navbar, { Navlink } from "./components/Navbar";
+import { NotFound } from "./pages";
 import routes from "./routes";
 import "./styles.css";
 
@@ -14,14 +15,17 @@ const App = () => (
         <Navlink to="/contact">Contact</Navlink>
       </Navbar>
 
-      {routes.map(route => (
-        <Route
-          component={route.component}
-          exact={route.exact}
-          key={route.path}
-          path={route.path}
-        />
-      ))}
+      <Switch>
+        {routes.map(route => (
+          <Route
+            component={route.component}
+            exact={route.exact}
+            key={route.path}
+            path={route.path}
+          />
+        ))}
+        <Route component={NotFound} />
+      </Switch>
     </React.Fragment>
   </BrowserRouter>
 );

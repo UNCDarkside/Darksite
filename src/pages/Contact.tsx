@@ -1,5 +1,11 @@
 import * as React from "react";
 
-const Contact = () => <h1>Contact</h1>;
+import Container from "../components/Container";
+
+const Contact = () => (
+  <Container>
+    <h1>Contact</h1>
+  </Container>
+);
 
 export default Contact;

@@ -1,5 +1,11 @@
 import * as React from "react";
 
-const History = () => <h1>History</h1>;
+import Container from "../components/Container";
+
+const History = () => (
+  <Container>
+    <h1>History</h1>
+  </Container>
+);
 
 export default History;

@@ -1,6 +1,8 @@
 .navbar {
   background: black;
+  font-family: "Roboto", sans-serif;
   font-size: 1.15rem;
+  margin-bottom: 1em;
   padding: 0 1em;
 }
 

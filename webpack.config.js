@@ -26,6 +26,7 @@ plugins.push(
     appMountId: "app",
     inject: false,
     links: ["https://fonts.googleapis.com/css?family=Open+Sans|Roboto"],
+    mobile: true,
     template: require("html-webpack-template")
   })
 );

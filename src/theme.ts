@@ -1,4 +1,7 @@
 export interface ThemeInterface {
+  breakpoints: {
+    sm: string;
+  };
   colors: {
     primary: string;
     primaryInverted: string;
@@ -13,6 +16,9 @@ export interface ThemeInterface {
  * The default theme for the application.
  */
 const theme: ThemeInterface = {
+  breakpoints: {
+    sm: "480px"
+  },
   colors: {
     primary: "black",
     primaryInverted: "white"

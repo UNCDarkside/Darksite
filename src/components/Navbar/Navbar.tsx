@@ -12,7 +12,10 @@ const NavRoot = styled.nav`
   font-family: "Roboto", sans-serif;
   font-size: 1.15rem;
   margin-bottom: 1em;
-  padding: 0 1em;
+
+  @media (min-width: ${props => props.theme.breakpoints.sm}) {
+    padding: 0 1em;
+  }
 `;
 
 /**
@@ -20,17 +23,29 @@ const NavRoot = styled.nav`
  */
 const NavContent = styled.div`
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
   margin: 0 auto;
   max-width: 75rem;
+
+  @media (min-width: ${props => props.theme.breakpoints.sm}) {
+    flex-direction: row;
+  }
 `;
 
 /**
  * Component to hold the list of navigation links.
  */
 const NavLinks = styled.ul`
+  border-top: 1px solid ${props => props.theme.colors.primaryInverted};
   display: flex;
+  flex-direction: column;
   justify-content: end;
+
+  @media (min-width: ${props => props.theme.breakpoints.sm}) {
+    border-top: none;
+    flex-direction: row;
+  }
 `;
 
 interface IProps {

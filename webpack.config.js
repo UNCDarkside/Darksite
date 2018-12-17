@@ -3,33 +3,17 @@ var path = require("path");
 
 // Plugins
 var CopyWebpackPlugin = require("copy-webpack-plugin");
-var HtmlWebpackPlugin = require("html-webpack-plugin");
 
 var DIST_DIR = path.resolve(__dirname, "dist");
+var PUBLIC_DIR = path.resolve(__dirname, "public");
 var SOURCE_DIR = path.resolve(__dirname, "src");
 
 // Set up Plugins
 
 var plugins = [];
 
-// Copy over files to publish directory
-plugins.push(
-  new CopyWebpackPlugin([
-    // Netlify redirects
-    path.resolve(SOURCE_DIR, "_redirects")
-  ])
-);
-
-// HTML template for rendering the app
-plugins.push(
-  new HtmlWebpackPlugin({
-    appMountId: "app",
-    inject: false,
-    links: ["https://fonts.googleapis.com/css?family=Open+Sans|Roboto"],
-    mobile: true,
-    template: require("html-webpack-template")
-  })
-);
+// Copy over static files to publish directory
+plugins.push(new CopyWebpackPlugin([PUBLIC_DIR]));
 
 module.exports = {
   mode: "development",

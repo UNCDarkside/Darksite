@@ -1,6 +1,6 @@
 import * as React from "react";
 
-import { Contact, History, Home } from "./pages";
+import { Blog, Contact, History, Home } from "./pages";
 
 export interface IRoute {
   component: React.ComponentType;
@@ -9,6 +9,10 @@ export interface IRoute {
 }
 
 const routes: IRoute[] = [
+  {
+    component: Blog,
+    path: "/blog"
+  },
   {
     component: Contact,
     exact: true,

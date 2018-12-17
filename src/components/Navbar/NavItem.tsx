@@ -2,7 +2,7 @@ import { LocationDescriptor } from "history";
 import * as React from "react";
 import { NavLink } from "react-router-dom";
 
-import styled from "../../styled-components";
+import styled, { css } from "../../styled-components";
 
 interface IProps {
   showActive?: boolean;
@@ -12,14 +12,25 @@ interface IProps {
 // Class applied to active nav links.
 const activeClassName = "nav-item-active";
 
+// CSS applied if the active link should be highlighted
+const activeCSS = css`
+  &.${activeClassName} {
+    background: #222;
+  }
+`;
+
 /**
  * A single item in the navigation bar.
  */
-const NavItem = styled(NavLink).attrs({
+const NavItem = styled(({ showActive = true, ...rest }) => (
+  // This is convoluted because we can't pass the 'showActive' prop down to the
+  // child element.
+  <NavLink {...rest} />
+)).attrs((props: IProps) => ({
   activeClassName,
-  exact: (props: IProps) => props.to === "/",
-  to: (props: IProps) => props.to
-})<IProps>`
+  // If nav links to the site root were not exact, they would always be active.
+  exact: props.to === "/"
+}))<IProps>`
   color: ${props => props.theme.colors.primaryInverted};
   display: block;
   text-decoration: none;
@@ -30,9 +41,7 @@ const NavItem = styled(NavLink).attrs({
     background: #333;
   }
 
-  &.${activeClassName} {
-    background: #222;
-  }
+  ${({ showActive = true }) => (showActive ? activeCSS : "")}
 `;
 
 export default NavItem;

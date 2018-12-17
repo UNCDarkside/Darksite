@@ -7,8 +7,10 @@ export interface ThemeInterface {
     primaryInverted: string;
   };
   fonts: {
-    base: string;
-    headings: string;
+    families: {
+      base: string;
+      headings: string;
+    };
   };
 }
 
@@ -24,8 +26,10 @@ const theme: ThemeInterface = {
     primaryInverted: "white"
   },
   fonts: {
-    base: "'Open Sans', sans-serif",
-    headings: "'Roboto', sans-serif"
+    families: {
+      base: "'Open Sans', sans-serif",
+      headings: "'Roboto', sans-serif"
+    }
   }
 };
 

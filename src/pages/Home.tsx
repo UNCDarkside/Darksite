@@ -1,10 +1,13 @@
 import * as React from "react";
 
 import Container from "../components/Container";
+import Heading from "../components/Heading";
 
 const Home = () => (
   <Container>
-    <h1>UNC Darkside</h1>
+    <Heading size="display" textAlign="center">
+      UNC Darkside
+    </Heading>
   </Container>
 );
 

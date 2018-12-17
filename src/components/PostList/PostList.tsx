@@ -3,6 +3,7 @@ import { Query } from "react-apollo";
 import gql from "graphql-tag";
 import { IPost } from "../../models";
 import styled from "../../styled-components";
+import Heading from "../Heading";
 import PostItem from "../PostItem";
 
 const POSTS_LIST = gql`
@@ -31,7 +32,7 @@ const PostListContainer = styled.div`
  */
 const PostList = () => (
   <React.Fragment>
-    <h2>Posts</h2>
+    <Heading>Posts</Heading>
     <p>Follow Darkside's ongoing shenanigans through our blog posts.</p>
     <Query query={POSTS_LIST}>
       {({ loading, error, data }) => {

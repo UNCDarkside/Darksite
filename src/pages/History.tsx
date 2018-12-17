@@ -1,10 +1,11 @@
 import * as React from "react";
 
 import Container from "../components/Container";
+import Heading from "../components/Heading";
 
 const History = () => (
   <Container>
-    <h1>History</h1>
+    <Heading>History</Heading>
   </Container>
 );
 

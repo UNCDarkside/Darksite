@@ -12,7 +12,7 @@ export default createGlobalStyle`
   }
   
   body {
-    font-family: ${props => props.theme.fonts.base};
+    font-family: ${props => props.theme.fonts.families.base};
   }
   
   h1,
@@ -21,7 +21,7 @@ export default createGlobalStyle`
   h4,
   h5,
   h6 {
-    font-family: ${props => props.theme.fonts.headings};
+    font-family: ${props => props.theme.fonts.families.headings};
     font-weight: normal;
   }
 `;

@@ -2,9 +2,8 @@ import * as React from "react";
 import { Query } from "react-apollo";
 import gql from "graphql-tag";
 import { IPost } from "../../models";
+import styled from "../../styled-components";
 import PostItem from "../PostItem";
-
-import * as styles from "./PostList.css";
 
 const POSTS_LIST = gql`
   query {
@@ -20,6 +19,16 @@ const POSTS_LIST = gql`
   }
 `;
 
+const PostListContainer = styled.div`
+  margin: 2em 0;
+`;
+
+/**
+ * Component to list all blog posts.
+ *
+ * The component fetches the list of posts from the API and the displays them.
+ * @constructor
+ */
 const PostList = () => (
   <React.Fragment>
     <h2>Posts</h2>
@@ -37,13 +46,13 @@ const PostList = () => (
         const postsToRender = data.posts;
 
         return (
-          <div className={styles.postListContainer}>
+          <PostListContainer>
             {postsToRender.map((post: IPost) => (
               <div className="my-3" key={post.slug}>
                 <PostItem post={post} />
               </div>
             ))}
-          </div>
+          </PostListContainer>
         );
       }}
     </Query>

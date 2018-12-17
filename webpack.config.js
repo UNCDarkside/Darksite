@@ -62,22 +62,6 @@ module.exports = {
         include: SOURCE_DIR,
         test: /\.js$/,
         loader: "source-map-loader"
-      },
-
-      {
-        test: /\.css$/,
-        include: SOURCE_DIR,
-        use: [
-          "style-loader",
-          {
-            loader: "typings-for-css-modules-loader",
-            options: {
-              localIdentName: "[name]__[local]___[hash:base64:5]",
-              modules: true,
-              namedExport: true
-            }
-          }
-        ]
       }
     ]
   },

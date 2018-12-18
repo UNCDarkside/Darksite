@@ -21,23 +21,29 @@ const POST_QUERY = gql`
   }
 `;
 
+const Icon = styled.i`
+  color: ${props => props.theme.colors.accent};
+  margin-right: 0.5em;
+`;
+
 const InfoContainer = styled.div`
+  font-size: 1.25rem;
   margin-bottom: 2rem;
 `;
 
-const Author = styled.span`
+const Author = styled.p`
   font-weight: bold;
-`;
-
-const Separator = styled.span`
-  color: ${props => props.theme.colors.accent};
 `;
 
 const PostInfo: React.FunctionComponent<{ post: IPost }> = ({ post }) => (
   <InfoContainer>
-    <Author>{post.author.name}</Author>
-    <Separator>&nbsp;&mdash;&nbsp;</Separator>
-    <span>{new Date(post.published).toLocaleDateString()}</span>
+    <Author>
+      <Icon className="fal fa-user" /> {post.author.name}
+    </Author>
+    <p>
+      <Icon className="fal fa-calendar" />{" "}
+      {new Date(post.published).toLocaleDateString()}
+    </p>
   </InfoContainer>
 );
 

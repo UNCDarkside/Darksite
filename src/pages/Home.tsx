@@ -5,23 +5,28 @@ import Heading from "../components/Heading";
 import styled from "../styled-components";
 
 const AngledDiv = styled.div`
+  background: ${props => props.theme.colors.accent};
+  height: 10em;
   margin-top: -1.15rem;
-  content: "";
-  border-style: solid;
-  border-width: 20rem 100vw 0 0;
-  border-color: ${props => props.theme.colors.accent} transparent transparent
-    transparent;
-  position: absolute;
-  width: 0;
+  transform: skewY(-12deg);
+  transform-origin: 0;
   z-index: -1;
+
+  @media (min-width: ${props => props.theme.breakpoints.sm}) {
+    height: 25em;
+  }
 `;
 
 const SmallCard = styled(Card)`
   background: ${props => props.theme.colors.primaryInverted};
   border-radius: 5px;
-  margin: 5em auto;
+  margin: -5em auto 5em auto;
   max-width: 90%;
   width: 30rem;
+
+  @media (min-width: ${props => props.theme.breakpoints.sm}) {
+    margin-top: -15em;
+  }
 `;
 
 const CardHeading = styled(Heading)`

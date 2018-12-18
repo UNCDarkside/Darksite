@@ -39,7 +39,7 @@ const App = () => (
               {routes.map(route => (
                 <Route
                   component={route.component}
-                  exact={route.exact}
+                  exact={!!route.exact}
                   key={route.path}
                   path={route.path}
                 />

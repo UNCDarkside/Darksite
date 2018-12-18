@@ -1,4 +1,5 @@
 import * as React from "react";
+import { RouteComponentProps, withRouter } from "react-router";
 
 import { IPost } from "../../models";
 import styled from "../../styled-components";
@@ -8,7 +9,7 @@ const PostContainer = styled.div`
   margin: 1em 0;
 `;
 
-interface IProps {
+interface IProps extends RouteComponentProps {
   post: IPost;
 }
 
@@ -19,9 +20,13 @@ interface IProps {
  * @param post - The post to display info about.
  * @constructor
  */
-const PostItem: React.FunctionComponent<IProps> = ({ post }) => (
+const PostItem: React.FunctionComponent<IProps> = ({
+  history,
+  match,
+  post
+}) => (
   <PostContainer>
-    <Card>
+    <Card onClick={() => history.push(`${match.path}/posts/${post.slug}`)}>
       <h3>{post.title}</h3>
       <p>
         {post.author.name} &mdash;{" "}
@@ -31,4 +36,4 @@ const PostItem: React.FunctionComponent<IProps> = ({ post }) => (
   </PostContainer>
 );
 
-export default PostItem;
+export default withRouter(PostItem);

@@ -1,12 +1,5 @@
 import * as React from "react";
-import * as Loadable from "react-loadable";
-import { ReactLoadableLoader } from "./components/Loader";
-
-const asLoadable = (opts: any) =>
-  Loadable({
-    loading: ReactLoadableLoader,
-    ...opts
-  });
+import { asLoadable } from "./loadable";
 
 export interface IRoute {
   component: React.ComponentType;

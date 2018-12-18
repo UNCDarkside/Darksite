@@ -21,7 +21,8 @@ module.exports = {
   output: {
     chunkFilename: "[name].chunk.js",
     filename: "[name].bundle.js",
-    path: DIST_DIR
+    path: DIST_DIR,
+    publicPath: "/"
   },
 
   devServer: {
@@ -34,7 +35,7 @@ module.exports = {
   devtool: "source-map",
 
   resolve: {
-    extensions: ["*", ".ts", ".tsx", ".js", ".json"]
+    extensions: ["*", ".mjs", ".ts", ".tsx", ".js", ".json"]
   },
 
   module: {

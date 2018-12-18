@@ -3,7 +3,6 @@ import * as React from "react";
 import { Query } from "react-apollo";
 import { IPost } from "../../models";
 import styled from "../../styled-components";
-import Heading from "../Heading";
 import Loader from "../Loader";
 import PostItem from "../PostItem";
 

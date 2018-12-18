@@ -14,9 +14,11 @@ interface IProps {
 }
 
 const Heading = styled.h1<IProps>`
+  font-family: ${props => props.theme.fonts.families.headings};
   font-size: ${props => (props.size ? FONT_SIZES[props.size] : FONT_SIZES.h1)};
+  font-weight: normal;
   margin-bottom: 0.5em;
-  text-align: ${({ textAlign = "left" }) => textAlign};
+  text-align: ${({ textAlign = "left" }) => textAlign};]
 `;
 
 export default Heading;

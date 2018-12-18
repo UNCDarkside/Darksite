@@ -14,14 +14,4 @@ export default createGlobalStyle`
   body {
     font-family: ${props => props.theme.fonts.families.base};
   }
-  
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    font-family: ${props => props.theme.fonts.families.headings};
-    font-weight: normal;
-  }
 `;

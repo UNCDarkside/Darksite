@@ -1,9 +1,10 @@
+import gql from "graphql-tag";
 import * as React from "react";
 import { Query } from "react-apollo";
-import gql from "graphql-tag";
 import { IPost } from "../../models";
 import styled from "../../styled-components";
 import Heading from "../Heading";
+import Loader from "../Loader";
 import PostItem from "../PostItem";
 
 const POSTS_LIST = gql`
@@ -37,7 +38,7 @@ const PostList = () => (
     <Query query={POSTS_LIST}>
       {({ loading, error, data }) => {
         if (loading) {
-          return <p>Loading...</p>;
+          return <Loader />;
         }
 
         if (error) {

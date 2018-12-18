@@ -1,9 +1,10 @@
 import * as React from "react";
 import * as Loadable from "react-loadable";
+import { ReactLoadableLoader } from "./components/Loader";
 
 const asLoadable = (opts: any) =>
   Loadable({
-    loading: () => <p>Loading...</p>,
+    loading: ReactLoadableLoader,
     ...opts
   });
 

@@ -1,13 +1,13 @@
-import * as React from "react";
-import { BrowserRouter, Link, Route, Switch } from "react-router-dom";
-import { ApolloProvider } from "react-apollo";
+import { InMemoryCache } from "apollo-cache-inmemory";
 import { ApolloClient } from "apollo-client";
 import { createHttpLink } from "apollo-link-http";
-import { InMemoryCache } from "apollo-cache-inmemory";
+import * as React from "react";
+import { ApolloProvider } from "react-apollo";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
 
 import Navbar, { NavItem } from "./components/Navbar";
 import GlobalStyles from "./globalStyles";
-import { NotFound } from "./pages";
+import NotFound from "./pages/NotFound";
 import routes from "./routes";
 import { ThemeProvider } from "./styled-components";
 import theme from "./theme";

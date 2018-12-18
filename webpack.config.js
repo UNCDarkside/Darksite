@@ -19,7 +19,8 @@ module.exports = {
   mode: "development",
   entry: path.resolve(SOURCE_DIR, "index.tsx"),
   output: {
-    filename: "bundle.js",
+    chunkFilename: "[name].chunk.js",
+    filename: "[name].bundle.js",
     path: DIST_DIR
   },
 

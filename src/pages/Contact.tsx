@@ -1,11 +1,11 @@
 import * as React from "react";
 
 import Container from "../components/Container";
-import Heading from "../components/Heading";
+import PageHeading from "../components/PageHeading";
 
 const Contact = () => (
   <Container>
-    <Heading>Contact</Heading>
+    <PageHeading>Contact</PageHeading>
   </Container>
 );
 

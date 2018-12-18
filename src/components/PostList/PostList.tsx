@@ -33,7 +33,6 @@ const PostListContainer = styled.div`
  */
 const PostList = () => (
   <React.Fragment>
-    <Heading>Posts</Heading>
     <p>Follow Darkside's ongoing shenanigans through our blog posts.</p>
     <Query query={POSTS_LIST}>
       {({ loading, error, data }) => {

@@ -1,4 +1,5 @@
 export interface ThemeInterface {
+  borderRadius: number;
   breakpoints: {
     sm: string;
   };
@@ -20,6 +21,7 @@ export interface ThemeInterface {
  * The default theme for the application.
  */
 const theme: ThemeInterface = {
+  borderRadius: 5,
   breakpoints: {
     sm: "480px"
   },

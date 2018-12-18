@@ -2,10 +2,11 @@ import * as React from "react";
 
 import Container from "../components/Container";
 import Heading from "../components/Heading";
+import PageHeading from "../components/PageHeading";
 
 const NotFound = () => (
   <Container>
-    <Heading>Page Not Found</Heading>
+    <PageHeading>Page Not Found</PageHeading>
     <Heading as="h2" size="h4">
       The specified page does not exist.
     </Heading>

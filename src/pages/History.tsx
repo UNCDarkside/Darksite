@@ -1,12 +1,12 @@
 import * as React from "react";
 
 import Container from "../components/Container";
-import Heading from "../components/Heading";
+import PageHeading from "../components/PageHeading";
 import Prose from "../components/Prose";
 
 const History = () => (
   <Container>
-    <Heading>History</Heading>
+    <PageHeading>History</PageHeading>
     <Prose>
       <p>
         Darkside began in the fall of 1993, when a couple of freshmen at the

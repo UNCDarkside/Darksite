@@ -19,7 +19,6 @@ const AngledDiv = styled.div`
 
 const SmallCard = styled(Card)`
   background: ${props => props.theme.colors.primaryInverted};
-  border-radius: 5px;
   margin: -5em auto 5em auto;
   max-width: 90%;
   width: 30rem;

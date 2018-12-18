@@ -2,8 +2,8 @@ import { ApolloClient, InMemoryCache } from "apollo-boost";
 import { createHttpLink } from "apollo-link-http";
 import * as React from "react";
 import { ApolloProvider } from "react-apollo";
-import { BrowserRouter, Route, Switch } from "react-router-dom";
-import Navbar, { NavItem } from "../components/Navbar";
+import { Route, Switch } from "react-router-dom";
+import Navbar, { NavItem } from "../components/Navigation";
 import NotFound from "../pages/NotFound";
 import routes from "../routes";
 

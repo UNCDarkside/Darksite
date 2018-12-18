@@ -15,7 +15,8 @@ const activeClassName = "nav-item-active";
 // CSS applied if the active link should be highlighted
 const activeCSS = css`
   &.${activeClassName} {
-    background: #222;
+    background: #333;
+    border-bottom: 2px solid ${props => props.theme.colors.accent};
   }
 `;
 

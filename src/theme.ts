@@ -2,6 +2,7 @@ export interface ThemeInterface {
   borderRadius: number;
   breakpoints: {
     sm: string;
+    md: string;
   };
   colors: {
     accent: string;
@@ -23,7 +24,8 @@ export interface ThemeInterface {
 const theme: ThemeInterface = {
   borderRadius: 5,
   breakpoints: {
-    sm: "480px"
+    sm: "480px",
+    md: "640px"
   },
   colors: {
     accent: "#007bff",

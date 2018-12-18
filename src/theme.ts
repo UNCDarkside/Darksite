@@ -3,6 +3,8 @@ export interface ThemeInterface {
     sm: string;
   };
   colors: {
+    accent: string;
+    divider: string;
     primary: string;
     primaryInverted: string;
   };
@@ -22,6 +24,8 @@ const theme: ThemeInterface = {
     sm: "480px"
   },
   colors: {
+    accent: "#007bff",
+    divider: "#ddd",
     primary: "black",
     primaryInverted: "white"
   },

@@ -12,6 +12,8 @@ const NavRoot = styled.nav`
   font-family: "Roboto", sans-serif;
   font-size: 1.15rem;
   margin-bottom: 1em;
+  position: relative;
+  z-index: 10;
 
   @media (min-width: ${props => props.theme.breakpoints.sm}) {
     padding: 0 1em;
@@ -37,7 +39,7 @@ const NavContent = styled.div`
  * Component to hold the list of navigation links.
  */
 const NavLinks = styled.ul`
-  border-top: 1px solid ${props => props.theme.colors.primaryInverted};
+  border-top: 1px solid ${props => props.theme.colors.divider};
   display: flex;
   flex-direction: column;
   justify-content: end;

@@ -4,6 +4,7 @@ import { Query } from "react-apollo";
 import { RouteComponentProps, withRouter } from "react-router";
 import { IPost } from "../../models";
 import styled from "../../styled-components";
+import { Breadcrumb, Breadcrumbs } from "../Breadcrumbs";
 import Loader from "../Loader";
 import PageHeading from "../PageHeading";
 import Prose from "../Prose";
@@ -63,21 +64,37 @@ interface IProps extends RouteComponentProps<IPathProps> {}
 const BlogPost: React.FunctionComponent<IProps> = ({ match }) => (
   <Query query={POST_QUERY} variables={{ slug: match.params.postSlug }}>
     {({ loading, error, data }) => {
+      let content;
+      let post: IPost | null = null;
       if (loading) {
-        return <Loader />;
+        content = <Loader />;
+      } else if (error) {
+        content = <PageHeading>Could Not Load Post</PageHeading>;
+      } else {
+        post = data.post as IPost;
+        content = (
+          <React.Fragment>
+            <PageHeading>{post.title}</PageHeading>
+            <PostInfo post={post} />
+            <Prose dangerouslySetInnerHTML={{ __html: post.rendered }} />
+          </React.Fragment>
+        );
       }
 
-      if (error) {
-        return <PageHeading>Could Not Load Post</PageHeading>;
-      }
-
-      const post = data.post;
+      const breadcrumbs = (
+        <Breadcrumbs>
+          <Breadcrumb path="/blog">Blog</Breadcrumb>
+          <Breadcrumb active={true}>
+            {post ? post.title : match.params.postSlug}
+          </Breadcrumb>
+        </Breadcrumbs>
+      );
 
       return (
         <React.Fragment>
-          <PageHeading>{post.title}</PageHeading>
-          <PostInfo post={post} />
-          <Prose dangerouslySetInnerHTML={{ __html: post.rendered }} />
+          {breadcrumbs}
+          {content}
+          {breadcrumbs}
         </React.Fragment>
       );
     }}

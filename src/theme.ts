@@ -17,6 +17,15 @@ export interface ThemeInterface {
       base: string;
       headings: string;
     };
+    sizes: {
+      display: string;
+      h1: string;
+      h2: string;
+      h3: string;
+      h4: string;
+      h5: string;
+      h6: string;
+    };
   };
 }
 
@@ -41,6 +50,15 @@ const theme: ThemeInterface = {
     families: {
       base: "'Open Sans', sans-serif",
       headings: "'Roboto', sans-serif"
+    },
+    sizes: {
+      display: "3.5rem",
+      h1: "3rem",
+      h2: "2.5rem",
+      h3: "2rem",
+      h4: "1.5rem",
+      h5: "1.25rem",
+      h6: "1rem"
     }
   }
 };

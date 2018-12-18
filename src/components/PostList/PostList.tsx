@@ -20,6 +20,11 @@ const POSTS_LIST = gql`
   }
 `;
 
+const LeadText = styled.p`
+  font-size: 1.25rem;
+  line-height: 1.618;
+`;
+
 const PostListContainer = styled.div`
   margin: 2em 0;
 `;
@@ -32,7 +37,9 @@ const PostListContainer = styled.div`
  */
 const PostList = () => (
   <React.Fragment>
-    <p>Follow Darkside's ongoing shenanigans through our blog posts.</p>
+    <LeadText>
+      Follow Darkside's ongoing shenanigans through our blog posts.
+    </LeadText>
     <Query query={POSTS_LIST}>
       {({ loading, error, data }) => {
         if (loading) {

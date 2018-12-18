@@ -9,6 +9,7 @@ export interface ThemeInterface {
     divider: string;
     primary: string;
     primaryInverted: string;
+    text: string;
     textMuted: string;
   };
   fonts: {
@@ -33,6 +34,7 @@ const theme: ThemeInterface = {
     divider: "#ddd",
     primary: "black",
     primaryInverted: "white",
+    text: "black",
     textMuted: "#555"
   },
   fonts: {

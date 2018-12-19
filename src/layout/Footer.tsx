@@ -1,7 +1,7 @@
 import * as React from "react";
 import { Link } from "react-router-dom";
 import Container from "../components/Container";
-import Heading from "../components/Heading";
+import Heading from "../components/typography/Heading";
 
 import styled, { css } from "../styled-components";
 

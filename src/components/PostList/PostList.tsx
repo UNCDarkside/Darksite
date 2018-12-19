@@ -1,10 +1,12 @@
 import gql from "graphql-tag";
 import * as React from "react";
 import { Query } from "react-apollo";
+
 import { IPost } from "../../models";
 import styled from "../../styled-components";
 import Loader from "../Loader";
 import PostItem from "../PostItem";
+import LeadText from "../typography/LeadText";
 
 const POSTS_LIST = gql`
   query {
@@ -18,11 +20,6 @@ const POSTS_LIST = gql`
       title
     }
   }
-`;
-
-const LeadText = styled.p`
-  font-size: 1.25rem;
-  line-height: 1.618;
 `;
 
 const PostListContainer = styled.div`

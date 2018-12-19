@@ -1,6 +1,6 @@
 import * as React from "react";
 import styled from "../../styled-components";
-import Heading from "../Heading";
+import Heading from "../typography/Heading";
 import Spinner from "../Spinner";
 
 const LoadingContainer = styled.div`

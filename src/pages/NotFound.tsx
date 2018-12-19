@@ -1,7 +1,7 @@
 import * as React from "react";
 
 import Container from "../components/Container";
-import Heading from "../components/Heading";
+import Heading from "../components/typography/Heading";
 import PageHeading from "../components/PageHeading";
 
 const NotFound = () => (

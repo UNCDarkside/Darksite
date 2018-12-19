@@ -7,7 +7,7 @@ import styled from "../../styled-components";
 import { Breadcrumb, Breadcrumbs } from "../Breadcrumbs";
 import Loader from "../Loader";
 import PageHeading from "../PageHeading";
-import Prose from "../Prose";
+import Prose from "../typography/Prose";
 
 const POST_QUERY = gql`
   query Post($slug: String!) {

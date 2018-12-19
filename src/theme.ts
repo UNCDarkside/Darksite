@@ -1,31 +1,54 @@
+/**
+ * Keys of the breakpoints used for responsive styles.
+ */
+export type Breakpoints = {
+  sm: string;
+  md: string;
+};
+
+/**
+ * Keys of the different colors used through the application.
+ */
+export type Colors = {
+  accent: string;
+  divider: string;
+  primary: string;
+  primaryInverted: string;
+  text: string;
+  textMuted: string;
+};
+
+/**
+ * Keys for the different font families used in the application.
+ */
+export type FontFamilies = {
+  base: string;
+  headings: string;
+};
+
+/**
+ * Keys of the names used for different font sizes.
+ */
+export type FontSizes = {
+  display: string;
+  h1: string;
+  h2: string;
+  h3: string;
+  h4: string;
+  h5: string;
+  h6: string;
+};
+
+/**
+ * The shape of the styling theme for the application.
+ */
 export interface ThemeInterface {
   borderRadius: number;
-  breakpoints: {
-    sm: string;
-    md: string;
-  };
-  colors: {
-    accent: string;
-    divider: string;
-    primary: string;
-    primaryInverted: string;
-    text: string;
-    textMuted: string;
-  };
+  breakpoints: Breakpoints;
+  colors: Colors;
   fonts: {
-    families: {
-      base: string;
-      headings: string;
-    };
-    sizes: {
-      display: string;
-      h1: string;
-      h2: string;
-      h3: string;
-      h4: string;
-      h5: string;
-      h6: string;
-    };
+    families: FontFamilies;
+    sizes: FontSizes;
   };
 }
 

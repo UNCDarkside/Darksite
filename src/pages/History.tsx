@@ -2,7 +2,7 @@ import * as React from "react";
 
 import Container from "../components/Container";
 import PageHeading from "../components/PageHeading";
-import Prose from "../components/Prose";
+import Prose from "../components/typography/Prose";
 
 const History = () => (
   <Container>

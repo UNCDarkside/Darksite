@@ -1,4 +1,4 @@
-import styled from "../../styled-components";
+import styled from "../../../styled-components";
 
 /**
  * A container that applies styling to the contained text to make it easier to

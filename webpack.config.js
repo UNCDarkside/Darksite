@@ -49,6 +49,18 @@ module.exports = {
         include: SOURCE_DIR,
         test: /\.js$/,
         loader: "source-map-loader"
+      },
+
+      {
+        test: /\.(png|jpg|gif)$/i,
+        use: [
+          {
+            loader: "url-loader",
+            options: {
+              limit: 8192
+            }
+          }
+        ]
       }
     ]
   },

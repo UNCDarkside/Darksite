@@ -5,7 +5,7 @@ import { Link as RouterLink } from "react-router-dom";
 import { IPost } from "../../models";
 import styled from "../../styled-components";
 import Card from "../Card";
-import Heading from "../Heading";
+import Heading from "../typography/Heading";
 
 const PostContainer = styled.div`
   margin: 2em 0;

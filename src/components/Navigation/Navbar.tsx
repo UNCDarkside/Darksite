@@ -1,4 +1,5 @@
 import * as React from "react";
+import shadow from "../shadows";
 
 import NavItem from "./NavItem";
 import styled from "../../styled-components";
@@ -7,8 +8,8 @@ import styled from "../../styled-components";
  * The root navbar element.
  */
 const NavRoot = styled.nav`
+  ${shadow(3)};
   background: ${props => props.theme.colors.primary};
-  box-shadow: 0 2px 5px ${props => props.theme.colors.primary};
   font-family: "Roboto", sans-serif;
   font-size: 1.15rem;
   margin-bottom: 1em;

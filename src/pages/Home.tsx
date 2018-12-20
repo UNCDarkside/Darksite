@@ -12,6 +12,8 @@ const AngledDiv = styled.div`
   background: ${props => props.theme.colors.accent};
   height: 10em;
   margin-top: -1.15rem;
+  /* Position relative so z-index actually works. */
+  position: relative;
   transform: skewY(-8deg);
   transform-origin: 0;
   z-index: -1;

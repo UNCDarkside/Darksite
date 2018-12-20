@@ -42,6 +42,7 @@ const NavContent = styled.div`
 const NavHeader = styled.div`
   align-items: center;
   display: flex;
+  flex: 1;
   font-size: 1.25rem;
   justify-content: space-between;
 `;
@@ -76,7 +77,6 @@ const NavMenuIcon = styled.span`
  */
 const NavLinks = styled.ul`
   display: none;
-  flex-grow: 1;
   justify-content: end;
 
   @media (min-width: ${props => props.theme.breakpoints.md}) {

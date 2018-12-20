@@ -13,10 +13,6 @@ const ResponsiveEmbed = styled.div`
   position: relative;
   height: 0;
 
-  @media (min-width: ${props => props.theme.breakpoints.md}) {
-    padding-bottom: 25%;
-  }
-
   & iframe {
     left: 0;
     top: 0;

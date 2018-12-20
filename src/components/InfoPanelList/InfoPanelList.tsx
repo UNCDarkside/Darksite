@@ -3,8 +3,10 @@ import * as React from "react";
 import { Query } from "react-apollo";
 import { IInfoPanel } from "../../models";
 import styled from "../../styled-components";
+import Container from "../Container";
 import Figure from "../Figure";
 import Loader from "../Loader";
+import ResponsiveImage from "../ResponsiveImage";
 import Heading from "../typography/Heading";
 import LeadText from "../typography/LeadText";
 import YouTubeEmbed from "../YouTubeEmbed";
@@ -31,6 +33,7 @@ const INFO_PANEL_QUERY = gql`
 const ImageSection = styled.section<{ reverse?: boolean }>`
   display: flex;
   flex-direction: column;
+  justify-content: space-around;
   margin: 2em 0;
 
   & > * {
@@ -74,27 +77,23 @@ const InfoPanelList = () => (
 
       return panels.map((panel, index) => (
         <ImageSection key={panel.id} reverse={index % 2 !== 0}>
-          {panel.media ? (
-            panel.media.image ? (
-              <Figure
-                alt={panel.media.caption}
-                caption={panel.media.caption}
-                src={panel.media.image}
-              />
-            ) : panel.media.youtubeId ? (
-              <YouTubeEmbed videoID={panel.media.youtubeId} />
-            ) : (
-              <div />
-            )
-          ) : (
-            <div />
+          {panel.media && (
+            <Figure caption={panel.media.caption}>
+              {panel.media.image ? (
+                <ResponsiveImage src={panel.media.image} />
+              ) : (
+                panel.media.youtubeId && (
+                  <YouTubeEmbed videoID={panel.media.youtubeId} />
+                )
+              )}
+            </Figure>
           )}
-          <div>
+          <Container>
             <Heading as="h3" size="h3">
               {panel.title}
             </Heading>
             <LeadText>{panel.text}</LeadText>
-          </div>
+          </Container>
         </ImageSection>
       ));
     }}

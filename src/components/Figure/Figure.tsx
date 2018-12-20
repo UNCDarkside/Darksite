@@ -1,15 +1,7 @@
 import * as React from "react";
 
 import styled from "../../styled-components";
-import shadow from "../shadows";
 import BaseText from "../typography/BaseText";
-
-const Image = styled.img`
-  ${shadow(3)};
-  display: block;
-  height: auto;
-  max-width: 100%;
-`;
 
 const FigCaption = styled(BaseText).attrs({ as: "figcaption" })`
   font-size: 0.85em;
@@ -17,14 +9,20 @@ const FigCaption = styled(BaseText).attrs({ as: "figcaption" })`
 `;
 
 interface IProps {
-  alt: string;
+  /** The caption to display beneath the children of the figure. */
   caption?: React.ReactNode;
-  src: string;
+  /** The children, usually graphic elements, to display. */
+  children: React.ReactNode | React.ReactNodeArray;
 }
 
-const Figure: React.FunctionComponent<IProps> = ({ alt, caption, src }) => (
+/**
+ * A figure with some form of embedded media and an optional caption.
+ *
+ * @constructor
+ */
+const Figure: React.FunctionComponent<IProps> = ({ caption, children }) => (
   <figure>
-    <Image alt={alt} src={src} />
+    {children}
     {caption && <FigCaption textAlign="center">{caption}</FigCaption>}
   </figure>
 );

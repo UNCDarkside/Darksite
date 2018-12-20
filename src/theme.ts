@@ -11,6 +11,8 @@ export type Breakpoints = {
  */
 export type Colors = {
   accent: string;
+  accentDark: string;
+  accentLight: string;
   divider: string;
   primary: string;
   primaryInverted: string;
@@ -63,6 +65,8 @@ const theme: ThemeInterface = {
   },
   colors: {
     accent: "#007bff",
+    accentDark: "#0062c4",
+    accentLight: "#00b3ff",
     divider: "#ddd",
     primary: "black",
     primaryInverted: "white",

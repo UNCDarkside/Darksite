@@ -8,7 +8,7 @@ import styled from "../styled-components";
 
 const AngledDiv = styled.div`
   background: radial-gradient(
-    #00b3ff 0,
+    ${props => props.theme.colors.accentLight} 0,
     ${props => props.theme.colors.accent} 50%
   );
   display: grid;
@@ -22,12 +22,20 @@ const AngledDiv = styled.div`
   z-index: -1;
 
   & :nth-child(1) {
-    background: linear-gradient(to left, transparent, #0062c4);
+    background: linear-gradient(
+      to left,
+      transparent,
+      ${props => props.theme.colors.accentDark}
+    );
     grid-column: span 2;
   }
 
   & :nth-child(2) {
-    background: linear-gradient(to right, transparent, #0062c4);
+    background: linear-gradient(
+      to right,
+      transparent,
+      ${props => props.theme.colors.accentDark}
+    );
     grid-area: 3 / span 3 / auto / -1;
   }
 

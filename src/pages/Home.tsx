@@ -1,8 +1,9 @@
 import * as React from "react";
 import Card from "../components/Card";
 import InfoPanelList from "../components/InfoPanelList";
+import shadow from "../components/shadows";
 import Heading from "../components/typography/Heading";
-import LeadText from "../components/typography/LeadText";
+import * as banner from "../images/darksideBanner.png";
 import styled from "../styled-components";
 
 const AngledDiv = styled.div`
@@ -18,6 +19,18 @@ const AngledDiv = styled.div`
   @media (min-width: ${props => props.theme.breakpoints.sm}) {
     height: 25em;
   }
+`;
+
+const CardImage = styled.div`
+  ${shadow(3)};
+  background-image: url("${banner}");
+  background-position: center center;
+  background-size: cover;
+  border-top-left-radius: ${props => props.theme.borderRadius}px;
+  border-top-right-radius: ${props => props.theme.borderRadius}px;
+  /* Negative margins account for card padding. */
+  margin: -1em -1em 1em -1em;
+  height: 128px;
 `;
 
 const SmallCard = styled(Card)`
@@ -43,15 +56,30 @@ const CardSeparator = styled.hr`
   width: 6rem;
 `;
 
+const LeadIcons = styled.div`
+  display: flex;
+  justify-content: space-around;
+  margin: 1em 0;
+`;
+
+const LeadIcon = styled.i`
+  display: block;
+`;
+
 const Home = () => (
   <React.Fragment>
     <AngledDiv />
     <SmallCard depth={5}>
+      <CardImage />
       <CardHeading size="display" textAlign="center">
         UNC Darkside
       </CardHeading>
       <CardSeparator />
-      <LeadText textAlign="center">Peace, Love, Darkside</LeadText>
+      <LeadIcons>
+        <LeadIcon className="fal fa-2x fa-peace" />
+        <LeadIcon className="fal fa-2x fa-heart" />
+        <LeadIcon className="fal fa-2x fa-moon" />
+      </LeadIcons>
     </SmallCard>
     <InfoPanelList />
   </React.Fragment>

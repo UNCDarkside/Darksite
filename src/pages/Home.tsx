@@ -7,8 +7,13 @@ import * as banner from "../images/darksideBanner.png";
 import styled from "../styled-components";
 
 const AngledDiv = styled.div`
-  background: ${props => props.theme.colors.accent};
-  height: 10em;
+  background: radial-gradient(
+    #00b3ff 0,
+    ${props => props.theme.colors.accent} 50%
+  );
+  display: grid;
+  grid: repeat(3, 1fr) / repeat(5, 1fr);
+  height: 35em;
   margin-top: -1.15rem;
   /* Position relative so z-index actually works. */
   position: relative;
@@ -16,8 +21,18 @@ const AngledDiv = styled.div`
   transform-origin: 0;
   z-index: -1;
 
+  & :nth-child(1) {
+    background: linear-gradient(to left, transparent, #0062c4);
+    grid-column: span 2;
+  }
+
+  & :nth-child(2) {
+    background: linear-gradient(to right, transparent, #0062c4);
+    grid-area: 3 / span 3 / auto / -1;
+  }
+
   @media (min-width: ${props => props.theme.breakpoints.sm}) {
-    height: 25em;
+    height: 30em;
   }
 `;
 
@@ -35,12 +50,12 @@ const CardImage = styled.div`
 
 const SmallCard = styled(Card)`
   background: ${props => props.theme.colors.primaryInverted};
-  margin: -5em auto 10em auto;
+  margin: -30em auto 10em auto;
   max-width: 90%;
   width: 30rem;
 
   @media (min-width: ${props => props.theme.breakpoints.sm}) {
-    margin-top: -15em;
+    margin-top: -20em;
   }
 `;
 
@@ -68,7 +83,10 @@ const LeadIcon = styled.i`
 
 const Home = () => (
   <React.Fragment>
-    <AngledDiv />
+    <AngledDiv>
+      <div />
+      <div />
+    </AngledDiv>
     <SmallCard depth={5}>
       <CardImage />
       <CardHeading size="display" textAlign="center">

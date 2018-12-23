@@ -4,6 +4,7 @@
 export type Breakpoints = {
   sm: string;
   md: string;
+  lg: string;
 };
 
 /**
@@ -61,7 +62,8 @@ const theme: ThemeInterface = {
   borderRadius: 5,
   breakpoints: {
     sm: "480px",
-    md: "640px"
+    md: "640px",
+    lg: "1400px"
   },
   colors: {
     accent: "#007bff",

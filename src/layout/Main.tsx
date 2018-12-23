@@ -28,6 +28,7 @@ const Main = () => (
         <NavItem to="/">Home</NavItem>
         <NavItem to="/blog">Blog</NavItem>
         <NavItem to="/history">History</NavItem>
+        <NavItem to="/gallery">Gallery</NavItem>
         <NavItem to="/contact">Contact</NavItem>
       </Navbar>
 

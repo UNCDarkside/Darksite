@@ -23,6 +23,12 @@ const routes: IRoute[] = [
   },
   {
     component: asLoadable({
+      loader: () => import(/* webpackChunkName: "gallery" */ "./pages/Gallery")
+    }),
+    path: "/gallery"
+  },
+  {
+    component: asLoadable({
       loader: () => import(/* webpackChunkName: "history" */ "./pages/History")
     }),
     exact: true,

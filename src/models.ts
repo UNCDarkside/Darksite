@@ -1,3 +1,11 @@
+export interface IAlbum {
+  created: string;
+  description: string;
+  mediaResources: IMediaResource[];
+  slug: string;
+  title: string;
+}
+
 export interface IInfoPanel {
   id: string;
   media?: IMediaResource;
@@ -7,7 +15,9 @@ export interface IInfoPanel {
 
 export interface IMediaResource {
   caption: string;
+  id: string;
   image: string | null;
+  title: string;
   youtubeId: string | null;
 }
 

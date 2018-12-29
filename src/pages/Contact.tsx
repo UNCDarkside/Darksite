@@ -18,12 +18,14 @@ const TwitterBox = styled.div`
 const ContactInfoBox = styled.section`
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   justify-content: space-around;
   margin: 2em 0;
 
   & > * {
     flex-basis: 0;
     flex-grow: 1;
+
     margin: 0 2em;
   }
 

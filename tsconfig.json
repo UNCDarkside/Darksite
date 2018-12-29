@@ -25,5 +25,6 @@
       "es2015.symbol.wellknown",
       "esnext.asynciterable"
     ]
-  }
+  },
+  "exclude": ["**/*.es.js"]
 }

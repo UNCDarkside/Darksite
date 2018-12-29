@@ -135,7 +135,11 @@ class Navbar extends React.Component<IProps, IState> {
             </NavMenuIcon>
           </NavHeader>
           <NavLinks>{children}</NavLinks>
-          {mobileOpen && <NavLinksMobile>{children}</NavLinksMobile>}
+          {mobileOpen && (
+            <NavLinksMobile onClick={this.toggleMenu}>
+              {children}
+            </NavLinksMobile>
+          )}
         </NavContent>
       </NavRoot>
     );

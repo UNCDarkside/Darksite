@@ -4,16 +4,8 @@ import Container from "../components/Container";
 import Heading from "../components/typography/Heading";
 import PageHeading from "../components/PageHeading";
 import styled from "../styled-components";
-import {
-  TwitterTimelineEmbed,
-  TwitterFollowButton
-} from "react-twitter-embed/dist/index.js";
-
-const TwitterBox = styled.div`
-  max-width: 400px;
-  max-height: 600px;
-  margin: 2em;
-`;
+import TwitterTimelineBox from "../components/TwitterTimelineBox";
+import { TwitterFollowButton } from "react-twitter-embed/dist/index.js";
 
 const ContactInfoBox = styled.section`
   display: flex;
@@ -56,13 +48,7 @@ const Contact = () => (
         <TwitterFollowButton screenName="UNC_Darkside" />
       </div>
     </ContactInfoBox>
-    <TwitterBox>
-      <TwitterTimelineEmbed
-        sourceType="profile"
-        screenName="UNC_Darkside"
-        options={{ height: 400 }}
-      />
-    </TwitterBox>
+    <TwitterTimelineBox />
   </Container>
 );
 

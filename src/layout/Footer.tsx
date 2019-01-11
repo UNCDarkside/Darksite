@@ -1,6 +1,7 @@
 import * as React from "react";
-import { Link } from "react-router-dom";
 import Container from "../components/Container";
+import { ExternalLink } from "../components/Link";
+import { Link } from "../components/Link";
 import Heading from "../components/typography/Heading";
 
 import styled, { css } from "../styled-components";
@@ -26,17 +27,16 @@ const FooterList = styled.div`
 const footerLinkCSS = css`
   color: ${props => props.theme.colors.primaryInverted};
   display: block;
-  text-decoration: underline;
 `;
 
 const FooterLink = styled(Link)`
-  ${footerLinkCSS}
+  &,
+  &:visited {
+    ${footerLinkCSS}
+  }
 `;
 
-const FooterLinkExternal = styled.a.attrs({
-  rel: "noopener noreferrer",
-  target: "_blank"
-})`
+const FooterLinkExternal = styled(ExternalLink)`
   &,
   &:visited {
     ${footerLinkCSS}
@@ -59,8 +59,8 @@ const Footer = () => (
           </Heading>
           <FooterLink to="/">Home</FooterLink>
           <FooterLink to="/blog">Blog</FooterLink>
-          <FooterLink to="/history">History</FooterLink>
           <FooterLink to="/gallery">Gallery</FooterLink>
+          <FooterLink to="/team">Team</FooterLink>
           <FooterLink to="/contact">Contact</FooterLink>
         </FooterList>
         <FooterList>

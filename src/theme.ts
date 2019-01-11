@@ -61,8 +61,8 @@ export interface ThemeInterface {
 const theme: ThemeInterface = {
   borderRadius: 5,
   breakpoints: {
-    sm: "480px",
-    md: "640px",
+    sm: "540px",
+    md: "720px",
     lg: "1400px"
   },
   colors: {

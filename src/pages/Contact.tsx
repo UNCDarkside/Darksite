@@ -1,6 +1,7 @@
 import * as React from "react";
 
 import Container from "../components/Container";
+import { ExternalLink } from "../components/Link";
 import Heading from "../components/typography/Heading";
 import PageHeading from "../components/PageHeading";
 import styled from "../styled-components";
@@ -36,13 +37,9 @@ const Contact = () => (
         </Heading>
         Jesse Kovacs
         <br />
-        <a
-          href="mailto:jjk007@live.unc.edu"
-          rel="noopener noreferrer"
-          target="_blank"
-        >
+        <ExternalLink href="mailto:jjk007@live.unc.edu">
           jjk007@live.unc.edu
-        </a>
+        </ExternalLink>
       </div>
       <div>
         <TwitterFollowButton screenName="UNC_Darkside" />

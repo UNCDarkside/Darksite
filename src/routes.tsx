@@ -36,6 +36,13 @@ const routes: IRoute[] = [
   },
   {
     component: asLoadable({
+      loader: () => import(/* webpackChunkName: "roster" */ "./pages/Team")
+    }),
+    exact: true,
+    path: "/team"
+  },
+  {
+    component: asLoadable({
       loader: () => import(/* webpackChunkName: "home" */ "./pages/Home")
     }),
     exact: true,
